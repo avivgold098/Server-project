@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 
 /**
- * MyServer calss - manage the side of the server
+ * MyServer class - manage the side of the server
  *
  */
 
@@ -39,7 +39,12 @@ public class MyServer extends CommonServer implements Runnable{
 	Table table;
 	Label statusText;
 	int numOfClients;
-
+	/**
+	 * The ctor of our class that initialzie all our data members.
+	 * @param port - the other port
+	 * @param clientHandler - the client handle we used
+	 * @param numOfClients - our num of clients.
+	 */
 	public MyServer(int port,ClientHandler clientHandler,int numOfClients) {
 		super(port, numOfClients);
 		this.clientHandler = clientHandler;
@@ -319,7 +324,7 @@ public class MyServer extends CommonServer implements Runnable{
 	}
 	
 	/**
-	 * start the thread of the window
+	 * in this method we start our thread that running the window of server.
 	 */
 	@Override
 	public void run() {
@@ -346,7 +351,9 @@ public class MyServer extends CommonServer implements Runnable{
 		display.dispose();
 		
 	}
-
+	/**
+	 * In this method we update our table of ips connection
+	 */
 	private void updateTalbe(){
 		table.clearAll();				
 	    for(int i = 0; i < ips.size();i++){

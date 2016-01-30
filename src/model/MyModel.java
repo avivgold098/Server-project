@@ -31,7 +31,12 @@ import algorithms.search.State;
 import controller.Controller;
 import controller.Properties;
 
-
+/**
+ * It is the class of the specific model that we are using in our project.
+ * In this class we have all the implementation for the methods from model interface.
+ * @author HP
+ *
+ */
 public class MyModel extends CommonModel{
 	Controller controller;
 	ExecutorService threadpool;
@@ -41,8 +46,9 @@ public class MyModel extends CommonModel{
 	Properties properties;
 	
 	/**
-	 * <p><strong>Default Constructor of MyModel</strong>
-	 * @param properties that contains the information from the user</p>
+	 * Default ctor of MyModel
+	 * @param properties that contains the information from the user that copied for our properties
+	 * data members.
 	 */
 	public MyModel(Properties properties) {
 		super();
@@ -53,8 +59,8 @@ public class MyModel extends CommonModel{
 	}
 	
 	/**
-	 * set the properties of the server
-	 * @param properties - get properties to set them
+	 * in this method we set our properties of the model, and all the data members for properties.
+	 * @param properties - the other properties that we copied into our data members.
 	 */
 	private void setProperties(Properties properties) {
 		this.numberOfThreads = properties.getNumberOfThreads();

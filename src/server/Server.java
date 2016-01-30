@@ -3,39 +3,42 @@ package server;
 import java.util.ArrayList;
 
 import controller.Controller;
+
 /**
- * Server Interface - set the functional of the server
+ * Its the Server interface the create his methods and make him functional.
  * 
  */
 public interface Server {
 	/**
-	 * start the server
+	 * In this method we start our connection to the client by creating the socket 
+	 * and this is super important method because here we have all work of the server 
+	 * with the client
 	 */
 	void start();
 	/**
-	 * close the server
+	 * In this method we close our connection 
 	 */
 	void close();
 	/**
-	 * set the controller
-	 * @param controller - the controller
+	 * In this method we are setting our data member of controller with another one.
+	 * @param controller - the other controller.
 	 */
 	void setController(Controller controller);
 	/**
-	 * display message to the mannage of the server
-	 * @param message
+	 *in this method we manage status of our server 
+	 * @param message the status of our server.
 	 */
 	void setMessage(String message);
 	
 	/**
-	 * return if the server is up or down
-	 * @return true if the server is up and down if not
+	 * in this methos we are checking if the server is up or not.
+	 * @return  true if the server is up otherwise false.
 	 */
 	boolean isAlive();
 	
 	/**
-	 * get the ip that connected to the server
-	 * @return ArrayList of ips
+	 * In this method we return all the ips address that connected to the server.
+	 * @return ArrayList of the ips that connect to the server.
 	 */
 	ArrayList<String> getIps();
 }

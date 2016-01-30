@@ -6,13 +6,23 @@ import algorithms.mazeGenerators.Maze3d;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 import controller.Controller;
-
+/**
+ * In this class is we have all the common things for the all models.
+ * so in this class we the data members thats we to share in every model we create.
+ * @author HP
+ *
+ */
 public abstract class CommonModel implements Model{
-	
+	/**
+	 * in this hash map we are mapping between string to maze3d
+	 */
 	HashMap<String, Maze3d> hm;
+	/**
+	 * in this hash map we are mapping between maze3d to sol.
+	 */
 	HashMap<Maze3d, Solution<Position>> hashSolution;
 	/**
-	 * constructor for common model
+	 * the ctor of our class that initialize our data members.
 	 */
 	public CommonModel() {
 		hm = new HashMap<String,Maze3d>();

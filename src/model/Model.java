@@ -5,57 +5,72 @@ import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 import controller.Controller;
 
-
+/**
+ * It is the interface class in the mvc of the server side project.
+ * the model role in the mvc its to creating sol for some problems that sent from the controller
+ * and then returning the sol.
+ * So after the model end to create or solve we he should , he sents that to the controller.
+ * @author HP
+ *
+ */
 public interface Model {
 
 	/**
-	 * create the solution of the maze and send him to the controller
-	 * @param name - the name of the maze
+	 * In this method we create for our search problem.
+	 * In this method we can to create two type of sol one with bfs and another with astar.
+	 * @param name - the name of the maze with the search problem.
+	 * @return the sol of for maze name we sent in the parm.
 	 */
 	Solution<Position> solve(String name);
 	/**
-	 * create the solution of the maze and send him to the controller
-	 * @param maze - the maze
+	 * In this method we create for our search problem.
+	 * In this method we can to create two type of sol one with bfs and another with astar.
+	 * @param maze -  the maze with the search problem.
+	 * @return the sol of the maze we sent in the parm.
 	 */
 	Solution<Position> solve(Maze3d maze);
 	
 	/**
-	 * generate new maze with specific name, and size of x, y and z
+	 * this method is generate  a new maze with specific name and limits.
+	 * we can choose or simple or prim algo for generate.
 	 * @param name - the name of the new maze
-	 * @param x - the size of x
-	 * @param y - the size of y
-	 * @param z - the size of z
+	 * @param x - every floor length
+	 * @param y - the number of flooes
+	 * @param z - the the every floor width.
 	 */
 	Maze3d generate3dMaze(String str);
 	
 	/**
-	 * Exit from the side of the model in the server
+	 * This method is exit from all the server side and also shut down the thread pool using safe
+	 * exit and save the files.
 	 */
 	void exit();
 
 	/**
 	 * set the controller that the model work with him
-	 * @param controller - get object of type controller
+	 * @param controller - the other controller that copied for our data member.
 	 */
 	void setController(Controller controller);
 
 	/**
-	 * save data to zip
+	 * in this method we save the hash map of sol and also the hash map of maze and his name into zip file.
 	 */
 	void save();
 
 	/**
-	 * load data from zip
+	 * in this method we load the hash map of sol and also the hash map of maze and his name into zip file.
 	 */
 	void load();
 
 	/**
-	 * Pause the running of threads in the server
+	 * In this method we pause the the threads into the server and
+	 * return true for success other wise we return false.
 	 */
 	boolean pause();
 
 	/**
-	 * Resume the running of threads in the server
+	 * In this method we resume the the threads into the server and
+	 * return true for success other wise we return false.
 	 */
 	boolean resume();
 }

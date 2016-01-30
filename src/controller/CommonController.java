@@ -6,17 +6,28 @@ import algorithms.search.Solution;
 import model.Model;
 import server.Server;
 
-
+/**
+ * this class is shared all the common things to the controller.
+ * so in this class we data members of model and server(view), this class is implemnents the server
+ * inter face.
+ * @author HP
+ *
+ */
 public abstract class CommonController implements Controller{
 	
+	/**
+	 * the model we  are working with him
+	 */
 	Model model;
+	/**
+	 * the server we are working with him
+	 */
 	Server server;
 	
 	/**
-	 * CommonController Constructor - initialize the Model and View that
-	 * the controller work with them
-	 * @param model - get object from type Model
-	 * @param view - get object from type View
+	 * the ctor of our class- initialize the both data members
+	 * @param model - the other model that copied for our model
+	 * @param server - the other server that copied for our server
 	 */
 	public CommonController(Model model, Server server){
 		this.model = model;

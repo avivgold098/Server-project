@@ -6,14 +6,21 @@ import algorithms.search.Solution;
 import model.Model;
 import server.Server;
 
-
+/**
+ * this is the class of our project controller , so this class is specific one.
+ * in this class we have all the implementation of the methods into the interface of controller.
+ * in this class is passing the problems to the model and then waiting for sol from him and then
+ * we are passing the soul to the view.
+ * @author HP
+ *
+ */
 public class MyController extends CommonController{
 	/**
-	 * MyController constructor - get Model and View
+	 * MyController ctor - this ctor is calling to the super class ctor.
 	 * initialize the model and view in the CommonController
 	 * create the HashMap from String to Command
-	 * @param model - get object from type Model
-	 * @param view - get object from type View
+	 * @param model - the other model that copied for our model
+	 * @param server - the other server that copied for our server
 	 */
 	
 	public MyController(Model model, Server server) {

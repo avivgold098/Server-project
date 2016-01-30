@@ -12,12 +12,18 @@ import algorithms.mazeGenerators.Position;
 import algorithms.search.Solution;
 import controller.Controller;
 
-
+/**
+ * it is our client handle for 3dMaze
+ * @author HP
+ *
+ */
 public class Maze3dClientHandler implements ClientHandler{
 
 	Controller controller;
 	boolean running = true;
-
+	/**
+	 * in this method we handle our client
+	 */
 	@Override
 	public void handleClient(InputStream inFromClient, OutputStream outToClient) {
 		try{

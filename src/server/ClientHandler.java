@@ -5,19 +5,20 @@ import java.io.OutputStream;
 
 import controller.Controller;
 /**
- * ClientHandler interface - set the functional of the client handler
+ * ClientHandler interface - in this class we set the the methods of the client handling.
+ * and make him functional
  */
 public interface ClientHandler {
 	/**
-	 * handle the connection with the customer
-	 * @param inFromClient - get the socket from the client
-	 * @param outToClient - get the socket to the client
+	 * in this method we handle the connection with our clients.
+	 * @param inFromClient - the socket InputStream
+	 * @param outToClient - the socket OutputStream
 	 */
 	void handleClient(InputStream inFromClient, OutputStream outToClient);
 	
 	/**
-	 * set the controller to work with him
-	 * @param controller - the controller
+	 * set our controller that we are working with him.
+	 * @param controller - the other controller that copied for our data member.
 	 */
 	void setController(Controller controller);
 }
